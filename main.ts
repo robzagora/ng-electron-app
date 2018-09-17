@@ -1,4 +1,4 @@
-import { app, BrowserWindow, screen } from 'electron';
+import { app, BrowserWindow, screen, ipcMain } from 'electron';
 import * as path from 'path';
 import * as url from 'url';
 
@@ -50,6 +50,11 @@ try {
   // initialization and is ready to create browser windows.
   // Some APIs can only be used after this event occurs.
   app.on('ready', createWindow);
+
+  ipcMain.on('aaa', (event, arg) => {
+    console.log('made it');
+    console.log(event);
+  });
 
   // Quit when all windows are closed.
   app.on('window-all-closed', () => {
