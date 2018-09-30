@@ -6,6 +6,8 @@ let win, serve;
 const args = process.argv.slice(1);
 serve = args.some(val => val === '--serve');
 
+console.log(ipcMain);
+
 function createWindow() {
 
   const electronScreen = screen;
@@ -53,7 +55,7 @@ try {
 
   ipcMain.on('aaa', (event, arg) => {
     console.log('made it');
-    console.log(event);
+    console.log(arg);
   });
 
   // Quit when all windows are closed.

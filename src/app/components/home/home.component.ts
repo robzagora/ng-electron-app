@@ -15,6 +15,19 @@ export class HomeComponent implements OnInit {
 
   test() {
     this.electronService.ipcRenderer.send('aaa', 'eeeeee');
+
+    const json = JSON.stringify({
+        test: 'test'
+    });
+
+    this.electronService.remote.dialog.showSaveDialog({}, (fileName, bookmark) => {
+      console.log(fileName);
+
+      this.electronService.fs.writeFile(fileName, json, err => {
+          console.log(err);
+      });
+    });
+
   }
 
 }
