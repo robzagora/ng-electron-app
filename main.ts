@@ -6,8 +6,6 @@ let win, serve;
 const args = process.argv.slice(1);
 serve = args.some(val => val === '--serve');
 
-console.log(ipcMain);
-
 function createWindow() {
 
   const electronScreen = screen;
