@@ -1,12 +1,21 @@
 import { NgModule } from "@angular/core";
 import { MatButtonModule, MatCardModule } from '@angular/material';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { VirtualScrollerModule } from 'ngx-virtual-scroller';
+
+const modules = [
+    MatButtonModule,
+    MatCardModule,
+    ScrollingModule,
+    VirtualScrollerModule
+];
 
 @NgModule({
     imports: [
-        MatButtonModule, MatCardModule
+        modules
     ],
     exports: [
-        MatButtonModule, MatCardModule
+        modules
     ]
 })
 export class MaterialModule {

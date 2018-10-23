@@ -10,4 +10,14 @@
       Test
     </mat-card-content>
   </mat-card>
+
+  <virtual-scroller #scroll [items]="chunksOfTen" style="height: 400px; background-color: orange; color: black">
+
+    <div *ngFor="let item of scroll.viewPortItems">
+      <span>{{ item }}</span>
+    </div>
+
+  </virtual-scroller>
+
+  
 </div>
